@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./tabStyle.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="Aluno.js" defer></script>
+    <script src="Turma.js" defer></script>
+    <script src="Interface.js" defer></script>
+    <script src="Main.js" defer></script>
+    <title>Sistema Escolar</title>
+  </head>
+  <body>
+    <!-- Botões para trocar de aba -->
+    <div class="tabs-container">
+      <button
+        class="tab-button active"
+        id="btn-turmas"
+        onclick="cadastroTurmas()"
+      >
+        Turmas
+      </button>
+      <button class="tab-button" id="btn-cadastrar" onclick="cadastroAluno()">
+        Cadastrar Aluno
+      </button>
+      <button class="tab-button" id="btn-listar" onclick="listarAluno()">
+        Listar Alunos
+      </button>
+    </div>
+
+    <!-- Conteúdo da Aba 1: Cadastrar e Visualizar Turmas -->
+    <div id="tab-turmas" class="tab-content active">
+      <h3>Cadastrar Nova Turma</h3>
+      <label for="curso">Nome do Curso:</label>
+      <input id="curso" type="text" />
+      <label for="professor">Professor:</label>
+      <input id="professor" type="text" />
+      <button onclick="btnSalvarTurma()" class="btn-salvar">
+        Salvar Turma
+      </button>
+
+      <hr />
+      <h3>Turmas Cadastradas</h3>
+      <div id="lista-turmas">
+        <p>Sem turmas.</p>
+      </div>
+    </div>
+
+    <!-- Conteúdo da Aba 2: Cadastrar Aluno -->
+    <div id="tab-cadastrar" class="tab-content">
+      <div id="aviso-sem-turma" class="aviso-alerta">Cadastre turma antes.</div>
+
+      <div id="form-aluno">
+        <label for="select-turma-cadastro">Turma:</label>
+        <select id="select-turma-cadastro"></select>
+
+        <label for="nome">Nome do Aluno:</label>
+        <input id="nome" type="text" />
+
+        <label for="n1">Nota 1:</label>
+        <input id="n1" type="number" step="0.1" min="0" max="10" />
+
+        <label for="n2">Nota 2:</label>
+        <input id="n2" type="number" step="0.1" min="0" max="10" />
+
+        <label for="n3">Nota 3:</label>
+        <input id="n3" type="number" step="0.1" min="0" max="10" />
+
+        <button onclick="btnSalvarAluno()" class="btn-salvar">
+          Salvar Aluno
+        </button>
+      </div>
+    </div>
+
+    <!-- Conteúdo da Aba 3: Listar e Editar Alunos -->
+    <div id="tab-listar" class="tab-content">
+      <h3>Alunos Cadastrados</h3>
+      <label for="select-turma-filtro">Selecione a Turma:</label>
+      <select
+        id="select-turma-filtro"
+        onchange="atualizarListaAlunos()"
+      ></select>
+
+      <div id="alunos">
+        <p>Selecione ou cadastre uma turma para visualizar os alunos.</p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+#alunos table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  text-align: left;
+  margin-top: 10px;
+}
+
+#alunos th {
+  background-color: #f1f3f5;
+  color: #333;
+  padding: 12px 10px;
+  font-weight: bold;
+}
+
+#alunos td {
+  padding: 10px;
+  border-bottom: 1px solid #e5e5e5;
+  color: #333;
+}
+
+#alunos tr:hover td {
+  background-color: #f8f9fa;
+}
+
+/* Centraliza notas, média, situação e ações */
+#alunos th:nth-child(n + 2),
+#alunos td:nth-child(n + 2) {
+  text-align: center;
+}
+
+#alunos th:first-child {
+  border-radius: 8px 0 0 8px;
+}
+
+#alunos th:last-child {
+  border-radius: 0 8px 8px 0;
+}
+
+.input-nota-edit {
+  width: 60px;
+  padding: 4px;
+  text-align: center;
+}
+
+.btn-acao {
+  padding: 5px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  color: white;
+}
+
+.btn-editar {
+  background-color: #007bff;
+}
+
+.btn-confirmar {
+  background-color: #28a745;
+}
+
+.btn-cancelar {
+  background-color: #6c757d;
+  margin-left: 4px;
+}
